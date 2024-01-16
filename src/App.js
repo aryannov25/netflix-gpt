@@ -1,21 +1,10 @@
 import "./App.css";
+import Body from "./components/Body";
 
 function App() {
   return (
-    <div className="text-center">
-      <header className="font-extrabold">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Body />
     </div>
   );
 }
