@@ -1,26 +1,30 @@
 import React from "react";
+import { Navigate, RouterProvider, createBrowserRouter } from "react-router-dom";
 import Login from "./Login";
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Browse from "./Browse";
+import ProfilePicker from "./ProfilePicker";
+import { useApp } from "../context/AppContext";
+
+const RequireProfile = ({ children }) => {
+  const { profile } = useApp();
+  return profile ? children : <Navigate to="/" replace />;
+};
 
 const Body = () => {
   const appRouter = createBrowserRouter([
-    {
-      path: "/",
-      element: <Login />,
-    },
-
+    { path: "/", element: <Login /> },
+    { path: "/profiles", element: <ProfilePicker /> },
     {
       path: "/browse",
-      element: <Browse />,
+      element: (
+        <RequireProfile>
+          <Browse />
+        </RequireProfile>
+      ),
     },
   ]);
 
-  return (
-    <div>
-      <RouterProvider router={appRouter} />
-    </div>
-  );
+  return <RouterProvider router={appRouter} />;
 };
 
 export default Body;

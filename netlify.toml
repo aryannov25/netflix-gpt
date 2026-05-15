@@ -1,0 +1,19 @@
+[build]
+  command = "npm run build"
+  publish = "build"
+
+[dev]
+  command = "npm start"
+  port = 8888
+  targetPort = 3000
+
+[[redirects]]
+  from = "/api/youtube/*"
+  to = "/.netlify/functions/youtube"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
