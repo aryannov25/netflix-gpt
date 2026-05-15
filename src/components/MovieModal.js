@@ -102,11 +102,12 @@ const MovieModal = () => {
           <img
             src={s.backdrop}
             alt=""
+            loading="lazy"
             className="absolute inset-0 h-full w-full scale-110 object-cover blur-2xl opacity-60"
             aria-hidden
           />
           <img
-            src={s.backdrop}
+            src={s.backdropHi ?? s.backdrop}
             alt={s.title}
             className="absolute left-1/2 top-1/2 h-full -translate-x-1/2 -translate-y-1/2 object-contain"
           />

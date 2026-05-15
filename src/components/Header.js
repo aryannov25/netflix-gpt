@@ -94,7 +94,13 @@ const Header = () => {
             to={isAppRoute ? "/browse" : "/"}
             className="flex items-center gap-2"
           >
-            <img src={Logo} alt="Netflix" className="h-6 md:h-7" />
+            <img
+              src={Logo}
+              alt="Netflix"
+              width="100"
+              height="28"
+              className="h-6 w-auto md:h-7"
+            />
           </Link>
           {isAppRoute && profile?.id === "kids" && (
             <span className="hidden items-center gap-1 rounded-full bg-yellow-400/20 px-2.5 py-0.5 text-[11px] font-bold uppercase tracking-widest text-yellow-300 ring-1 ring-yellow-400/40 md:inline-flex">

@@ -49,7 +49,13 @@ const Login = () => {
       />
 
       <div className="relative z-10 flex items-center justify-between px-6 py-6 md:px-12">
-        <img src={Logo} alt="Netflix" className="h-7 md:h-8" />
+        <img
+          src={Logo}
+          alt="Netflix"
+          width="120"
+          height="32"
+          className="h-7 w-auto md:h-8"
+        />
         <a
           href={HELP_URL}
           target="_blank"

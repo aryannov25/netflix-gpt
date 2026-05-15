@@ -16,11 +16,12 @@ const Slide = ({ show, active }) => {
       <img
         src={show.backdrop}
         alt=""
+        loading="lazy"
         className="absolute inset-0 h-full w-full scale-110 object-cover blur-2xl"
         aria-hidden
       />
       <img
-        src={show.backdrop}
+        src={show.backdropHi ?? show.backdrop}
         alt={show.title}
         className="absolute left-1/2 top-1/2 h-[88%] -translate-x-1/2 -translate-y-1/2 object-contain opacity-90 md:left-auto md:right-16 md:translate-x-0"
       />

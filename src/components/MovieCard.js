@@ -9,6 +9,7 @@ const MovieCard = ({ movie }) => {
       <img
         src={movie.poster}
         alt=""
+        loading="lazy"
         className="absolute inset-0 h-full w-full scale-110 object-cover blur-xl opacity-60"
         aria-hidden
       />

@@ -46,6 +46,7 @@ const TopTenRow = ({ id, title, items }) => {
                 <img
                   src={m.poster}
                   alt=""
+                  loading="lazy"
                   className="absolute inset-0 h-full w-full scale-110 object-cover blur-xl opacity-60"
                   aria-hidden
                 />

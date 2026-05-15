@@ -3,21 +3,27 @@ const BASE = "https://api.tvmaze.com";
 const stripHtml = (html) =>
   (html ?? "").replace(/<[^>]*>/g, "").replace(/\s+/g, " ").trim();
 
-const toShow = (s) => ({
-  id: s.id,
-  title: s.name,
-  poster: s.image?.original ?? s.image?.medium ?? null,
-  backdrop: s.image?.original ?? s.image?.medium ?? null,
-  rating: s.rating?.average ?? null,
-  year: s.premiered ? s.premiered.slice(0, 4) : null,
-  genres: s.genres ?? [],
-  language: s.language ?? null,
-  network: s.network?.name ?? s.webChannel?.name ?? null,
-  runtime: s.runtime ?? s.averageRuntime ?? null,
-  status: s.status ?? null,
-  weight: s.weight ?? 0,
-  overview: stripHtml(s.summary),
-});
+const toShow = (s) => {
+  const medium = s.image?.medium ?? null;
+  const original = s.image?.original ?? null;
+  return {
+    id: s.id,
+    title: s.name,
+    poster: medium ?? original,
+    posterHi: original ?? medium,
+    backdrop: medium ?? original,
+    backdropHi: original ?? medium,
+    rating: s.rating?.average ?? null,
+    year: s.premiered ? s.premiered.slice(0, 4) : null,
+    genres: s.genres ?? [],
+    language: s.language ?? null,
+    network: s.network?.name ?? s.webChannel?.name ?? null,
+    runtime: s.runtime ?? s.averageRuntime ?? null,
+    status: s.status ?? null,
+    weight: s.weight ?? 0,
+    overview: stripHtml(s.summary),
+  };
+};
 
 export const fetchShows = async () => {
   const res = await fetch(`${BASE}/shows?page=0`);
