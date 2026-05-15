@@ -69,12 +69,12 @@ const Login = () => {
       <div className="relative z-10 flex min-h-[calc(100vh-88px)] items-center justify-center px-4 pb-16">
         <form
           onSubmit={handleSubmit}
-          className="w-full max-w-md rounded-3xl border border-white/10 bg-black/40 p-10 shadow-[0_30px_120px_-20px_rgba(0,0,0,0.9)] backdrop-blur-2xl"
+          className="w-full max-w-md rounded-3xl border border-white/10 bg-black/40 p-6 shadow-[0_30px_120px_-20px_rgba(0,0,0,0.9)] backdrop-blur-2xl sm:p-10"
         >
           <p className="mb-2 text-xs font-semibold uppercase tracking-[0.3em] text-neutral-400">
             Welcome
           </p>
-          <h1 className="mb-8 text-4xl font-black tracking-tight text-white">
+          <h1 className="mb-7 text-3xl font-black tracking-tight text-white sm:mb-8 sm:text-4xl">
             {isSignIn ? (
               <>
                 Sign in to <span className="text-gradient-red">continue</span>

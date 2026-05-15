@@ -24,10 +24,15 @@ const TopTenRow = ({ id, title, items }) => {
   return (
     <section id={id} className="group/row relative mb-12 overflow-hidden scroll-mt-24">
       <div className="mb-4 flex items-center gap-3 px-6 md:px-16">
-        <span className="flex h-7 items-center gap-1.5 rounded-full bg-gradient-accent px-3 text-[11px] font-bold uppercase tracking-widest text-white">
-          Top 10
+        <span
+          className="inline-block shrink-0 rounded-full bg-gradient-accent px-3 py-1 text-[11px] font-bold uppercase tracking-widest leading-5 text-white"
+          style={{ whiteSpace: "nowrap" }}
+        >
+          Top&nbsp;10
         </span>
-        <h2 className="text-xl font-bold text-white md:text-2xl">{title}</h2>
+        <h2 className="min-w-0 truncate text-lg font-bold text-white sm:text-xl md:text-2xl">
+          {title}
+        </h2>
       </div>
       <div className="relative">
         <RowChevrons onLeft={() => scroll("left")} onRight={() => scroll("right")} />

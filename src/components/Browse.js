@@ -20,7 +20,7 @@ import {
 const Skeleton = () => (
   <div className="min-h-screen">
     <Header />
-    <div className="h-[85vh] animate-pulse bg-white/[0.03]" />
+    <div className="h-[80vh] animate-pulse bg-white/[0.03] sm:h-[85vh]" />
     <div className="space-y-10 px-6 pt-10 md:px-16">
       {Array.from({ length: 3 }).map((_, i) => (
         <div key={i}>

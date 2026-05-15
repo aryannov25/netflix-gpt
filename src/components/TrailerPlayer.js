@@ -54,24 +54,37 @@ const TrailerPlayer = () => {
 
   return (
     <div className="fixed inset-0 z-[110] flex flex-col bg-black">
-      <div className="flex items-center justify-between px-5 py-4 md:px-8">
-        <div className="flex items-center gap-3">
-          <span className="flex h-7 items-center gap-1.5 rounded-full bg-gradient-accent px-3 text-[11px] font-bold uppercase tracking-widest text-white shadow-lg">
+      <div className="flex items-center justify-between gap-3 px-4 py-3 md:px-8 md:py-4">
+        <div className="flex min-w-0 items-center gap-2 md:gap-3">
+          <span className="flex h-7 shrink-0 items-center gap-1.5 rounded-full bg-gradient-accent px-3 text-[10px] font-bold uppercase tracking-widest text-white shadow-lg md:text-[11px]">
             <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-white" />
-            Now Playing
+            <span className="hidden sm:inline">Now Playing</span>
+            <span className="sm:hidden">Live</span>
           </span>
-          <span className="text-base font-semibold text-white">
+          <span className="truncate text-sm font-semibold text-white md:text-base">
             {playingShow.title}
           </span>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex shrink-0 items-center gap-2">
           <a
             href={youtubeSearchUrl(playingShow.title)}
             target="_blank"
             rel="noreferrer"
-            className="rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-medium text-neutral-200 transition hover:border-white/40 hover:text-white"
+            aria-label="Open on YouTube"
+            className="hidden rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-medium text-neutral-200 transition hover:border-white/40 hover:text-white sm:inline-flex"
           >
             Open on YouTube ↗
+          </a>
+          <a
+            href={youtubeSearchUrl(playingShow.title)}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Open on YouTube"
+            className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-white/20 sm:hidden"
+          >
+            <svg viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5">
+              <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-5.8 31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.2 3.6-6.2 3.6Z" />
+            </svg>
           </a>
           <button
             onClick={() => setPlayingShow(null)}

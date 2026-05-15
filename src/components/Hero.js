@@ -23,14 +23,14 @@ const Slide = ({ show, active }) => {
       <img
         src={show.backdropHi ?? show.backdrop}
         alt={show.title}
-        className="absolute left-1/2 top-1/2 h-[88%] -translate-x-1/2 -translate-y-1/2 object-contain opacity-90 md:left-auto md:right-16 md:translate-x-0"
+        className="absolute right-0 top-1/2 h-[55%] -translate-y-1/2 object-contain opacity-60 sm:h-[70%] sm:opacity-80 md:right-16 md:h-[88%] md:opacity-90"
       />
       <div className="absolute inset-0 bg-gradient-to-r from-[rgb(var(--bg))] via-[rgb(var(--bg))]/85 to-transparent" />
       <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[rgb(var(--bg))] via-[rgb(var(--bg))]/70 to-transparent" />
 
-      <div className="relative z-10 flex h-full max-w-[1600px] flex-col justify-end px-6 pb-24 md:px-16 md:pb-28">
-        <div className="mb-4 flex items-center gap-3">
-          <span className="inline-flex h-7 items-center gap-1.5 rounded-full bg-gradient-accent px-3 text-[11px] font-bold uppercase tracking-widest text-white shadow-lg">
+      <div className="relative z-10 flex h-full max-w-[1600px] flex-col justify-end px-5 pb-20 sm:px-6 sm:pb-24 md:px-16 md:pb-28">
+        <div className="mb-3 flex flex-wrap items-center gap-2 sm:mb-4 sm:gap-3">
+          <span className="inline-flex h-7 shrink-0 items-center gap-1.5 whitespace-nowrap rounded-full bg-gradient-accent px-3 text-[11px] font-bold uppercase tracking-widest text-white shadow-lg">
             <SparkleIcon />
             Featured
           </span>
@@ -41,11 +41,11 @@ const Slide = ({ show, active }) => {
           )}
         </div>
 
-        <h1 className="mb-4 max-w-3xl text-5xl font-black leading-[0.95] tracking-tight text-white drop-shadow-2xl md:text-7xl lg:text-8xl">
+        <h1 className="mb-3 max-w-3xl text-4xl font-black leading-[0.95] tracking-tight text-white drop-shadow-2xl sm:mb-4 sm:text-5xl md:text-7xl lg:text-8xl">
           {show.title}
         </h1>
 
-        <div className="mb-5 flex flex-wrap items-center gap-2 text-sm">
+        <div className="mb-4 flex flex-wrap items-center gap-2 text-xs sm:mb-5 sm:text-sm">
           {show.rating != null && (
             <span className="inline-flex items-center gap-1 rounded-full bg-green-500/15 px-2.5 py-0.5 font-semibold text-green-400">
               <span className="h-1.5 w-1.5 rounded-full bg-green-400" />
@@ -72,22 +72,22 @@ const Slide = ({ show, active }) => {
           ))}
         </div>
 
-        <p className="mb-7 max-w-xl text-base leading-relaxed text-neutral-200 md:text-lg">
+        <p className="mb-5 line-clamp-3 max-w-xl text-sm leading-relaxed text-neutral-200 sm:mb-7 sm:line-clamp-none sm:text-base md:text-lg">
           {show.overview?.length > 240
             ? show.overview.slice(0, 240) + "…"
             : show.overview}
         </p>
 
-        <div className="flex flex-wrap gap-3">
+        <div className="flex flex-wrap gap-2 sm:gap-3">
           <button
             onClick={() => playShow(show)}
-            className="flex items-center gap-2 rounded-full bg-white px-7 py-3 text-sm font-bold text-black transition hover:scale-[1.03] hover:bg-white md:text-base"
+            className="flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-bold text-black transition hover:scale-[1.03] hover:bg-white sm:px-7 sm:py-3 md:text-base"
           >
-            <PlayIcon className="h-6 w-6" /> Play Trailer
+            <PlayIcon className="h-5 w-5 sm:h-6 sm:w-6" /> Play Trailer
           </button>
           <button
             onClick={() => setOpenShow(show)}
-            className="flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-7 py-3 text-sm font-semibold text-white backdrop-blur-sm transition hover:border-white/40 hover:bg-white/15 md:text-base"
+            className="flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-5 py-2.5 text-sm font-semibold text-white backdrop-blur-sm transition hover:border-white/40 hover:bg-white/15 sm:px-7 sm:py-3 md:text-base"
           >
             <InfoIcon className="h-5 w-5" /> More Info
           </button>
@@ -113,13 +113,13 @@ const Hero = ({ shows }) => {
   }, [total, paused]);
 
   if (!total)
-    return <div className="h-[85vh] min-h-[560px] w-full bg-[rgb(var(--bg))]" />;
+    return <div className="h-[80vh] min-h-[520px] w-full bg-[rgb(var(--bg))] sm:h-[85vh] sm:min-h-[560px]" />;
 
   const go = (delta) => setIndex((i) => (i + delta + total) % total);
 
   return (
     <section
-      className="group/hero relative h-[85vh] min-h-[560px] w-full overflow-hidden"
+      className="group/hero relative h-[80vh] min-h-[520px] w-full overflow-hidden sm:h-[85vh] sm:min-h-[560px]"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >

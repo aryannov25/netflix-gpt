@@ -83,11 +83,11 @@ const MovieModal = () => {
 
   return (
     <div
-      className="fixed inset-0 z-[100] flex items-start justify-center overflow-y-auto bg-black/80 px-4 py-10 backdrop-blur-sm"
+      className="fixed inset-0 z-[100] flex items-start justify-center overflow-y-auto bg-black/80 px-2 py-4 backdrop-blur-sm sm:px-4 sm:py-10"
       onClick={() => setOpenShow(null)}
     >
       <div
-        className="relative w-full max-w-4xl overflow-hidden rounded-3xl border border-white/10 bg-[rgb(var(--surface))] shadow-[0_30px_120px_-20px_rgba(0,0,0,0.9)]"
+        className="relative w-full max-w-4xl overflow-hidden rounded-2xl border border-white/10 bg-[rgb(var(--surface))] shadow-[0_30px_120px_-20px_rgba(0,0,0,0.9)] sm:rounded-3xl"
         onClick={(e) => e.stopPropagation()}
       >
         <button
@@ -112,8 +112,8 @@ const MovieModal = () => {
             className="absolute left-1/2 top-1/2 h-full -translate-x-1/2 -translate-y-1/2 object-contain"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[rgb(var(--surface))] via-[rgb(var(--surface))]/40 to-transparent" />
-          <div className="absolute inset-x-0 bottom-0 p-7 md:p-10">
-            <h2 className="mb-5 text-4xl font-black tracking-tight text-white drop-shadow-xl md:text-5xl">
+          <div className="absolute inset-x-0 bottom-0 p-4 sm:p-7 md:p-10">
+            <h2 className="mb-4 text-2xl font-black tracking-tight text-white drop-shadow-xl sm:mb-5 sm:text-4xl md:text-5xl">
               {s.title}
             </h2>
             <div className="flex flex-wrap items-center gap-3">
@@ -145,7 +145,7 @@ const MovieModal = () => {
           </div>
         </div>
 
-        <div className="grid gap-8 p-7 md:grid-cols-3 md:p-10">
+        <div className="grid gap-6 p-5 sm:gap-8 sm:p-7 md:grid-cols-3 md:p-10">
           <div className="md:col-span-2">
             <div className="mb-4 flex flex-wrap items-center gap-2 text-sm">
               {s.rating != null && (

@@ -31,7 +31,7 @@ const ContinueWatchingRow = ({ id, items }) => {
             <button
               key={show.id}
               onClick={() => playShow(show)}
-              className="group/card relative aspect-video w-72 flex-shrink-0 overflow-hidden rounded-2xl bg-black ring-1 ring-white/10 transition duration-300 hover:scale-[1.03] hover:ring-white/30 md:w-80"
+              className="group/card relative aspect-video w-60 flex-shrink-0 overflow-hidden rounded-2xl bg-black ring-1 ring-white/10 transition duration-300 hover:scale-[1.03] hover:ring-white/30 sm:w-72 md:w-80"
             >
               <img
                 src={show.backdrop}
